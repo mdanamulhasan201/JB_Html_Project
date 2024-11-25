@@ -13,15 +13,13 @@
   border: none;
 }
 
-/* Navbar Section */
+/********* Navbar Section **********/
 header {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  background: #fff;
-  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
-  padding: 3rem 3rem;
+  padding: 2.2rem 3rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -29,7 +27,6 @@ header {
   text-transform: uppercase;
 }
 
-/* Navbar for Larger Screens */
 header .navbar {
   display: flex;
   gap: 2rem;
@@ -41,18 +38,16 @@ header .navbar a {
   color: var(--gray);
   text-decoration: none;
   display: block;
-
   position: relative;
 }
 
-/* Mobile Menu Styles */
 header input {
   display: none;
 }
 
 header label {
-  font-size: 2rem;
-  color: var(--gray);
+  font-size: 1.2rem;
+  color: var(--white);
   cursor: pointer;
   visibility: hidden;
   opacity: 0;
@@ -62,7 +57,50 @@ header label {
   transform: translateY(-50%);
 }
 
-/* Mobile Menu Styles */
+/******** banner section *********/
+.banner {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 500px;
+  overflow: hidden;
+}
+
+.banner img {
+  width: 1200px;
+  height: 100%;
+  margin: 0 auto;
+  display: block;
+}
+
+.banner-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+  font-family: Arial, sans-serif;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.banner-overlay h1 {
+  font-family: "Satisfy", cursive;
+  white-space: nowrap;
+  font-size: 2rem;
+  color: white;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.banner-overlay p {
+  font-size: 1.2rem;
+  white-space: nowrap;
+  margin: 0;
+}
+
+/******** Mobile Menu Styles *********/
 @media (max-width: 768px) {
   header label {
     visibility: visible;
@@ -84,10 +122,10 @@ header label {
   }
 
   header .navbar a {
-    font-size: 1.5rem;
-    border-bottom: 1px solid var(--gray);
+    font-size: 1.2rem;
+    border-bottom: 1px solid rgb(168, 168, 168);
     line-height: 1;
-    padding: 2rem 3rem;
+    padding: 2rem 2rem;
   }
 
   header .navbar a::before {
@@ -95,19 +133,18 @@ header label {
     font-family: "Font Awesome 5 Free";
     font-weight: 900;
     position: absolute;
-    left: 1rem;
+    left: 0.8rem;
     color: var(--gray);
     font-size: 1.2rem;
     top: 50%;
     transform: translateY(-50%);
   }
-  /* Show navbar when menu is checked */
+
   header input:checked ~ .navbar {
     transform: scaleY(1);
     opacity: 1;
   }
 
-  /* Change hamburger to close icon */
   header input:checked ~ label::before {
     content: "\f00d";
   }
