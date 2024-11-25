@@ -1,13 +1,114 @@
-*{
-    margin:0; padding:0;
-    box-sizing: border-box;
-    text-decoration: none;
-    outline: none; border:none;
+:root {
+  --black: #000;
+  --gray: #333;
+  --white: #fff;
 }
 
-section{
-    min-height: 100vh;
-    padding:0 9%;
-    padding-top: 7.5rem;
-    padding-bottom: 2rem;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  outline: none;
+  border: none;
+}
+
+/* Navbar Section */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #fff;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+  padding: 3rem 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 1000;
+  text-transform: uppercase;
+}
+
+/* Navbar for Larger Screens */
+header .navbar {
+  display: flex;
+  gap: 2rem;
+  margin-left: auto;
+}
+header .navbar a {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--gray);
+  text-decoration: none;
+  display: block;
+
+  position: relative;
+}
+
+/* Mobile Menu Styles */
+header input {
+  display: none;
+}
+
+header label {
+  font-size: 2rem;
+  color: var(--gray);
+  cursor: pointer;
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;
+  right: 2rem;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* Mobile Menu Styles */
+@media (max-width: 768px) {
+  header label {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  header .navbar {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: var(--white);
+    display: block;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+    transform-origin: top;
+    transform: scaleY(0);
+    opacity: 0;
+    transition: 0.3s ease-in-out;
+  }
+
+  header .navbar a {
+    font-size: 1.5rem;
+    border-bottom: 1px solid var(--gray);
+    line-height: 1;
+    padding: 2rem 3rem;
+  }
+
+  header .navbar a::before {
+    content: "\f054";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    position: absolute;
+    left: 1rem;
+    color: var(--gray);
+    font-size: 1.2rem;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  /* Show navbar when menu is checked */
+  header input:checked ~ .navbar {
+    transform: scaleY(1);
+    opacity: 1;
+  }
+
+  /* Change hamburger to close icon */
+  header input:checked ~ label::before {
+    content: "\f00d";
+  }
 }
