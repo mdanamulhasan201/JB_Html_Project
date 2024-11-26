@@ -1,3 +1,4 @@
+@import url(https://fonts.googleapis.com/css?family=Pacifico);
 :root {
   --black: #000;
   --gray: #333;
@@ -12,6 +13,10 @@
   outline: none;
   border: none;
 }
+body {
+  overflow-x: hidden;
+  color: var(--black);
+}
 
 /********* Navbar Section **********/
 header {
@@ -19,7 +24,7 @@ header {
   top: 0;
   left: 0;
   width: 100%;
-  padding: 2.2rem 3rem;
+  padding: 2.5rem 2rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -33,12 +38,13 @@ header .navbar {
   margin-left: auto;
 }
 header .navbar a {
-  font-size: 1rem;
+  font-size: 0.9rem;
   font-weight: 500;
   color: var(--gray);
   text-decoration: none;
   display: block;
   position: relative;
+  
 }
 
 header input {
@@ -57,47 +63,43 @@ header label {
   transform: translateY(-50%);
 }
 
-/******** banner section *********/
-.banner {
+/*********** banner section **********/
+#banner {
   position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 500px;
   overflow: hidden;
+  width: 100%;
+  height: 568px;
 }
 
-.banner img {
-  width: 1200px;
-  height: 100%;
-  margin: 0 auto;
-  display: block;
+#banner img {
+  position: absolute;
+  left: 50%;
+  width: 1280px;
+  height: 568px;
+  margin-left: -640px;
 }
 
-.banner-overlay {
+#content {
   position: absolute;
   top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  width: 100%;
+  -webkit-transform: translate(0, -50%);
+  transform: translate(0, -50%);
+  color: #fff;
+  line-height: 1.2;
   text-align: center;
-  color: white;
-  font-family: Arial, sans-serif;
-  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
 }
 
-.banner-overlay h1 {
-  font-family: "Satisfy", cursive;
-  white-space: nowrap;
-  font-size: 2rem;
-  color: white;
-  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+#content h1 {
+  font-size: 40px;
+  font-family: "Pacifico", cursive;
+  margin-bottom: 18px;
+  font-weight: normal;
 }
 
-.banner-overlay p {
-  font-size: 1.2rem;
-  white-space: nowrap;
-  margin: 0;
+#content h2 {
+  font-size: 20px;
+  font-weight: normal;
 }
 
 /******** Mobile Menu Styles *********/
@@ -105,6 +107,7 @@ header label {
   header label {
     visibility: visible;
     opacity: 1;
+ 
   }
 
   header .navbar {
@@ -122,20 +125,20 @@ header label {
   }
 
   header .navbar a {
-    font-size: 1.2rem;
+    font-size: 1rem;
     border-bottom: 1px solid rgb(168, 168, 168);
     line-height: 1;
-    padding: 2rem 2rem;
+    padding: 1.5rem 2rem;
   }
 
   header .navbar a::before {
     content: "\f054";
     font-family: "Font Awesome 5 Free";
-    font-weight: 900;
+    font-weight: 700;
     position: absolute;
     left: 0.8rem;
     color: var(--gray);
-    font-size: 1.2rem;
+    font-size: 1rem;
     top: 50%;
     transform: translateY(-50%);
   }
@@ -147,5 +150,13 @@ header label {
 
   header input:checked ~ label::before {
     content: "\f00d";
+
+  }
+  #content h1 {
+    font-size: 31px;
+  }
+
+  #content h2 {
+    font-size: 16px;
   }
 }
