@@ -1,8 +1,17 @@
-@import url(https://fonts.googleapis.com/css?family=Pacifico);
+/* Import Fonts */
+@import url("https://fonts.googleapis.com/css?family=Pacifico&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;700&family=Noto+Sans+JP:wght@300;400;700&display=swap");
+
 :root {
   --black: #000;
   --gray: #333;
   --white: #fff;
+  --bg-gray: #f6f6f6;
+  --primary-font: "Noto Sans JP", Arial, Verdana, YuGothic, "ProN W3",
+    "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+  --headline-font: "Pacifico", cursive;
+  --title-font: "Josefin Sans", sans-serif;
 }
 
 * {
@@ -17,7 +26,19 @@ body {
   overflow-x: hidden;
   color: var(--black);
 }
-
+h2 {
+  text-transform: uppercase;
+  font-weight: 500;
+  font-family: var(--title-font);
+  font-size: 22px;
+  text-align: center;
+  padding-bottom: 20px;
+}
+p {
+  font-family: var(--primary-font);
+  font-weight: 300;
+  font-size: 14px;
+}
 /********* Navbar Section **********/
 header {
   position: fixed;
@@ -39,8 +60,9 @@ header .navbar {
 }
 header .navbar a {
   font-size: 0.9rem;
-  font-weight: 500;
-  color: var(--gray);
+  font-family: var(--primary-font);
+  font-weight: 300;
+  color: var(--black);
   text-decoration: none;
   display: block;
   position: relative;
@@ -94,14 +116,16 @@ header label {
 
 #content h1 {
   font-size: 40px;
-  font-family: "Pacifico", cursive;
+  font-family: var(--headline-font);
   margin-bottom: 18px;
   font-weight: normal;
 }
 
-#content h2 {
+#content h3 {
   font-size: 20px;
   font-weight: normal;
+  font-family: var(--primary-font);
+  font-weight: 300;
 }
 
 /******* Vision  *************/
@@ -111,24 +135,61 @@ header label {
   padding: 70px 0;
 }
 
-#vision h2 {
-  text-align: center;
-  padding-bottom: 20px;
-  text-transform: uppercase;
-  font-weight: 500;
-}
-#vision p {
-  font-weight: normal;
+/******** message ********/
+#message {
+  display: flex;
+  box-sizing: border-box;
+  flex-wrap: wrap;
 }
 
-/******** Mobile responsive all content ******/
-@media (max-width: 768px) {
+.left_side,
+.right_side {
+  width: 50%;
+}
+
+.left_side img {
+  width: 100%;
+  height: auto;
+  padding-bottom: 80px;
+}
+
+.right_side {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: var(--bg-gray);
+  padding: 20px;
+}
+
+/******* Responsive styles for mobile devices *********/
+@media screen and (max-width: 768px) {
+  /* banner section */
   #content h1 {
     font-size: 31px;
   }
 
-  #content h2 {
+  #content h3 {
     font-size: 16px;
+  }
+
+  /* message section */
+  #message {
+    flex-direction: column;
+  }
+
+  .left_side {
+    order: 1;
+    width: 100%;
+  }
+
+  .right_side {
+    order: 2;
+    width: 100%;
+    padding: 50px 20px;
+  }
+
+  .left_side img {
+   padding-bottom: 0px;
   }
 }
 
