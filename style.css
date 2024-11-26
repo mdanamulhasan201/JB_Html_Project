@@ -44,7 +44,9 @@ header .navbar a {
   text-decoration: none;
   display: block;
   position: relative;
-  
+}
+.navbar a:hover {
+  text-decoration: underline;
 }
 
 header input {
@@ -64,14 +66,14 @@ header label {
 }
 
 /*********** banner section **********/
-#banner {
+.banner {
   position: relative;
   overflow: hidden;
   width: 100%;
   height: 568px;
 }
 
-#banner img {
+.banner img {
   position: absolute;
   left: 50%;
   width: 1280px;
@@ -102,12 +104,39 @@ header label {
   font-weight: normal;
 }
 
+/******* Vision  *************/
+.vision {
+  width: 60%;
+  margin: 0 auto;
+  padding: 70px 0;
+}
+
+#vision h2 {
+  text-align: center;
+  padding-bottom: 20px;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+#vision p {
+  font-weight: normal;
+}
+
+/******** Mobile responsive all content ******/
+@media (max-width: 768px) {
+  #content h1 {
+    font-size: 31px;
+  }
+
+  #content h2 {
+    font-size: 16px;
+  }
+}
+
 /******** Mobile Menu Styles *********/
 @media (max-width: 768px) {
   header label {
     visibility: visible;
     opacity: 1;
- 
   }
 
   header .navbar {
@@ -150,13 +179,5 @@ header label {
 
   header input:checked ~ label::before {
     content: "\f00d";
-
-  }
-  #content h1 {
-    font-size: 31px;
-  }
-
-  #content h2 {
-    font-size: 16px;
   }
 }
