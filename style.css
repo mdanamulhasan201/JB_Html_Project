@@ -26,6 +26,9 @@ body {
   overflow-x: hidden;
   color: var(--black);
 }
+html {
+  scroll-behavior: smooth;
+}
 h2 {
   text-transform: uppercase;
   font-weight: 500;
@@ -67,6 +70,7 @@ header .navbar a {
   display: block;
   position: relative;
 }
+
 .navbar a:hover {
   text-decoration: underline;
 }
@@ -161,8 +165,64 @@ header label {
   padding: 20px;
 }
 
+/********** services *******/
+.service {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  width: 100%;
+  width: 1024px;
+  margin: 0 auto;
+  padding: 100px 0;
+}
+
+.box {
+  text-align: center;
+}
+.box p {
+  margin-top: 20px;
+}
+
+/********** story *********/
+#story {
+  background: url("images/bgSec04.jpg") no-repeat center center/cover;
+  color: #fff;
+  width: 100%;
+  padding: 50px 20px;
+  box-sizing: border-box;
+}
+
+.container {
+  padding: 50px 0;
+  width: 100%;
+  max-width: 1024px;
+  margin: 0 auto;
+}
+
+.main_content {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.left_side_story,
+.right_side_success {
+  flex: 1;
+  min-width: 300px;
+  padding: 20px;
+}
+
+@media (max-width: 1024px) {
+  .service {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 560px;
+  }
+}
+
 /******* Responsive styles for mobile devices *********/
-@media screen and (max-width: 768px) {
+@media (max-width: 768px) {
   /* banner section */
   #content h1 {
     font-size: 31px;
@@ -180,6 +240,7 @@ header label {
   .left_side {
     order: 1;
     width: 100%;
+    display: flex;
   }
 
   .right_side {
@@ -189,7 +250,24 @@ header label {
   }
 
   .left_side img {
-   padding-bottom: 0px;
+    padding-bottom: 0px;
+  }
+
+  /* services */
+  .service {
+    grid-template-columns: 1fr;
+    max-width: 280px;
+  }
+
+  /* story */
+  .main_content {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .left_side_story,
+  .right_side_success {
+    min-width: 100%;
   }
 }
 
