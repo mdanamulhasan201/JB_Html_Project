@@ -7,6 +7,7 @@
   --black: #000;
   --gray: #333;
   --white: #fff;
+  --blue: #007bff;
   --bg-gray: #f6f6f6;
   --primary-font: "Noto Sans JP", Arial, Verdana, YuGothic, "ProN W3",
     "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
@@ -41,6 +42,7 @@ p {
   font-family: var(--primary-font);
   font-weight: 300;
   font-size: 14px;
+  line-height: 25px;
 }
 /********* Navbar Section **********/
 header {
@@ -272,14 +274,14 @@ header label {
 
 .info-row.clients .text a {
   text-decoration: none;
-  color: #007bff;
+  color: var(--blue);
   font-weight: 400;
   word-wrap: break-word;
 }
 
 .info-row.clients .text a:hover {
   text-decoration: underline;
-  color: #007bff;
+  color: var(--blue);
 }
 
 .map-container {
@@ -292,33 +294,24 @@ header label {
   border: none;
 }
 
-/* Media Query for Mobile Responsiveness */
-@media (max-width: 768px) {
-  #profile {
-    padding: 40px 20px;
-  }
 
-  .container {
-    flex-direction: column;
-    gap: 10px;
-    align-items: center;
-  }
+.footer{
+	padding: 70px 0;
+	text-align: center;
+	font-size: 12px;
+  font-weight: 700;
+  font-family: var(--primary-font);
+  line-height: 25px;
 
-  .label {
-    text-align: end;
-    margin-right: 15px;
-  }
- 
-  .info-row.clients .label {
-    margin-right: 15px;
-  }
-  .map-container {
-    flex: none;
-    width: 100%;
-    margin-top: 40px;
-  }
+}
+.footer a{
+  color: var(--blue);
+}
+.footer a:hover{
+  text-decoration: underline;
 }
 
+/********** Responsive styles for tablets *********/
 @media (max-width: 1024px) {
   .service {
     grid-template-columns: repeat(2, 1fr);
@@ -373,6 +366,36 @@ header label {
   .left_side_story,
   .right_side_success {
     min-width: 100%;
+  }
+
+   /* profile */
+   #profile {
+    padding: 40px 20px;
+  }
+
+  .container {
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+  }
+
+  .label {
+    text-align: end;
+    margin-right: 15px;
+  }
+ 
+  .info-row.clients .label {
+    margin-right: 15px;
+  }
+  .map-container {
+    flex: none;
+    width: 100%;
+    margin-top: 40px;
+  }
+
+  /* footer */
+  .footer{
+    padding: 0 20px 40px 0;
   }
 }
 
